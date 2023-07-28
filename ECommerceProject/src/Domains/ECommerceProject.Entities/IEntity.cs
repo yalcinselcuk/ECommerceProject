@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerceProject.Infrastructure.Data
+namespace ECommerceProject.Entities
 {
-    public class DbSeeding
+    public interface IEntity
     {
     }
 }
