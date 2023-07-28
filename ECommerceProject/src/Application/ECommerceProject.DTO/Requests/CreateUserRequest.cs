@@ -23,6 +23,6 @@ namespace ECommerceProject.DTO.Requests
 
         public int CreatedUserId { get; set; }
 
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
     }
 }

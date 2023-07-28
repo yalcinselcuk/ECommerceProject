@@ -16,8 +16,8 @@ namespace ECommerceProject.Services.Mappings
         {
             CreateMap<User, UserResponse>();
             CreateMap<CreateUserRequest, User>();
-            CreateMap<UpdateUserRequest, User>();
-            CreateMap<DeleteUserRequest, User>();
+            CreateMap<UpdateUserRequest, User>().ReverseMap();
+            CreateMap<DeleteUserRequest, User>().ReverseMap();
         }
     }
 }

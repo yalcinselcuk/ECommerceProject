@@ -52,5 +52,34 @@ namespace ECommerceProject.API.Controllers
             // Model geçersiz ise hata mesajlarıyla birlikte BadRequest cevabı döndür
             return BadRequest(ModelState);
         }
+
+        [HttpPut("{id}")]//ıdempotent = hep aynı sonuc
+        public async Task<IActionResult> Update(int id, UpdateUserRequest request)
+        {
+            var isExist = await _userService.UserIsExistsAsync(id);
+            if (isExist)//varsa güncelleyeceğiz
+            {
+                if (ModelState.IsValid)//kurallara uyuyor mu
+                {
+                    await _userService.UpdateUserAsync(request);
+                    return Ok();//201 de dönebiliriz
+                }
+                return BadRequest(ModelState);
+            }
+            return NotFound();//yoksa 
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var isExist = await _userService.UserIsExistsAsync(id);
+            if (isExist)//böyle bir şey varsa
+            {
+                var user = await _userService.GetUserForDeleteAsync(id);
+                await _userService.DeleteUserAsync(user);
+                return Ok();
+            }
+            return NotFound();
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace ECommerceProject.DTO.Requests
 {
     public class UpdateUserRequest
     {
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Name is required.")]
         public string Name { get; set; }
@@ -23,6 +24,6 @@ namespace ECommerceProject.DTO.Requests
 
         public int CreatedUserId { get; set; }
 
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
     }
 }

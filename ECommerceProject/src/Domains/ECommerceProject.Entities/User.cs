@@ -24,6 +24,6 @@ namespace ECommerceProject.Entities
 
         public int CreatedUserId { get; set; }
 
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
     }
 }
