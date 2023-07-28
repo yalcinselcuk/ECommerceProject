@@ -12,7 +12,7 @@ namespace ECommerceProject.DTO.Requests
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public int CreateadUserId { get; set; }
+        public int CreatedUserId { get; set; }
         public DateTime CreatedDate { get; set; }
     }
 }

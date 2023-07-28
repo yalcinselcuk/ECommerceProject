@@ -35,8 +35,8 @@ namespace ECommerceProject.Infrastructure.Migrations
                 columns: new[] { "Id", "CreatedDate", "CreatedUserId", "Email", "Name", "Password" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2023, 7, 28, 14, 54, 44, 483, DateTimeKind.Local).AddTicks(8361), 1, "yalcin@gmail.com", "Yalçın", "123" },
-                    { 2, new DateTime(2023, 7, 28, 14, 54, 44, 483, DateTimeKind.Local).AddTicks(8380), 1, "kerem@gmail.com", "Kerem", "123" }
+                    { 1, new DateTime(2023, 7, 28, 19, 43, 52, 5, DateTimeKind.Local).AddTicks(8471), 1, "yalcin@gmail.com", "Yalçın", "123" },
+                    { 2, new DateTime(2023, 7, 28, 19, 43, 52, 5, DateTimeKind.Local).AddTicks(8481), 1, "kerem@gmail.com", "Kerem", "123" }
                 });
         }
 

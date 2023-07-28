@@ -56,7 +56,7 @@ namespace ECommerceProject.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 7, 28, 14, 54, 44, 483, DateTimeKind.Local).AddTicks(8361),
+                            CreatedDate = new DateTime(2023, 7, 28, 19, 43, 52, 5, DateTimeKind.Local).AddTicks(8471),
                             CreatedUserId = 1,
                             Email = "yalcin@gmail.com",
                             Name = "Yalçın",
@@ -65,7 +65,7 @@ namespace ECommerceProject.Infrastructure.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 7, 28, 14, 54, 44, 483, DateTimeKind.Local).AddTicks(8380),
+                            CreatedDate = new DateTime(2023, 7, 28, 19, 43, 52, 5, DateTimeKind.Local).AddTicks(8481),
                             CreatedUserId = 1,
                             Email = "kerem@gmail.com",
                             Name = "Kerem",

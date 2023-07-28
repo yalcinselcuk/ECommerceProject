@@ -26,6 +26,11 @@ namespace ECommerceProject.Infrastructure.Repositories
 
         public async Task CreateAsync(User entity)
         {
+            var user = dbContext.Users.Any(u => u.Email == entity.Email);
+            if(user)
+            {
+                throw new InvalidOperationException("User with the same email already exists.");
+            }
             await dbContext.Users.AddAsync(entity);
             await dbContext.SaveChangesAsync();
         }
@@ -44,7 +49,7 @@ namespace ECommerceProject.Infrastructure.Repositories
             await dbContext.SaveChangesAsync();
         }
 
-        public User? Get(int id)
+        public User? GetById(int id)
         {
             return dbContext.Users.FirstOrDefault(u => u.Id == id);
         }
@@ -59,14 +64,18 @@ namespace ECommerceProject.Infrastructure.Repositories
             return await dbContext.Users.AsNoTracking().ToListAsync();  
         }
 
-        public async Task<User?> GetAsync(int id)
+        public async Task<User?> GetByIdAsync(int id)
         {
             return await dbContext.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Id == id);
         }
 
-        public async Task<bool> IsExistsAsync(int id)
+        public async Task<bool> IsExistsUserAsync(int id)
         {
             return await dbContext.Users.AnyAsync(u => u.Id == id);
+        }
+        public async Task<bool> IsExistsUserMailAsync(User entity)
+        {
+            return await dbContext.Users.AnyAsync(u => u.Email == (entity.Email));
         }
 
         public void Update(User entity)

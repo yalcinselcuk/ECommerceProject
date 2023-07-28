@@ -10,17 +10,18 @@ namespace ECommerceProject.Infrastructure.Repositories
 {
     public interface IRepository<T> where T : class, IEntity, new()
     {
-        T? Get(int id);
+        T? GetById(int id);
         IList<T?> GetAll();
         void Create(T entity);
         void Update(T entity);
         void Delete(T entity);
 
-        Task<T?> GetAsync(int id);
+        Task<T?> GetByIdAsync(int id);
         Task<IList<T?>> GetAllAsync();
         Task CreateAsync(T entity);
         Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
-        Task<bool> IsExistsAsync(int id);
+        Task<bool> IsExistsUserAsync(int id);
+
     }
 }
